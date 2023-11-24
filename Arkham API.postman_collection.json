@@ -1,0 +1,486 @@
+{
+	"info": {
+		"_postman_id": "259326a7-3aec-4b12-9f31-f2f8398266a3",
+		"name": "Arkham API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "client get by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDYxOTI2MiwiZXhwIjoxNzAwNjIwNzAyfQ.VKlKUf8pBfsGBEKseZkfHzOG-L3L1fJmvVofDRTGqME",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"firstName\": \"Nombre\",\r\n  \"lastName\": \"Apellido\",\r\n  \"phone\": \"123456789\",\r\n  \"email\": \"correo@ejemplo.com\",\r\n  \"active\": true\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/client/1152197943",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"client",
+								"1152197943"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDY3MTYzNiwiZXhwIjoxNzAwNjczMDc2fQ.obFG5HOjdzk5G3iUYyt4ud-FwPhbCHXXst4ShghOI-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": 1152197943,\r\n    \"firstName\": \"Anselmo\",\r\n    \"lastName\": \"Ortega\",\r\n    \"phone\": 3148510218,\r\n    \"email\": \"anselmo@mail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/client/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"client",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"clientId\": 1152197943,\r\n    \"email\": \"anselmo@gmail.com\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/client/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"client",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "client delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/cesde/arkham/api/client/delete/1152197943",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cesde",
+								"arkham",
+								"api",
+								"client",
+								"delete",
+								"1152197943"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Property",
+			"item": [
+				{
+					"name": "property by owner id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/api/property/owner/1152197943",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"property",
+								"owner",
+								"1152197943"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property by district name",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/api/property/location/manrique",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"property",
+								"location",
+								"manrique"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "property save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDYxOTQzNiwiZXhwIjoxNzAwNjIwODc2fQ.b7TZrl75fcooOJQpoDCRTKRKoc4zaajnAAjDohElDlM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"price\": 150000.00,\r\n  \"availability\": true,\r\n  \"ownerId\": 1153697943,\r\n  \"offer\": \"ARRENDAMIENTO\",\r\n  \"propertyType\": \"APARTAMENTO\",\r\n  \"rooms\": 4,\r\n  \"bathrooms\": 2,\r\n  \"courtyard\": false,\r\n  \"level\": 3,\r\n  \"area\": 110.75,\r\n  \"naturalGas\": true,\r\n  \"laundryArea\": true,\r\n  \"address\": \"16 Apple Street\",\r\n  \"district\": \"Manrique\",\r\n  \"city\": \"Example City\"\r\n}\r\n\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/property/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"property",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Owner",
+			"item": [
+				{
+					"name": "owner get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/api/owner/1152197943",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"owner",
+								"1152197943"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "owner save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDY3MTYzNiwiZXhwIjoxNzAwNjczMDc2fQ.obFG5HOjdzk5G3iUYyt4ud-FwPhbCHXXst4ShghOI-A",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"ownerId\": 1153697943,\r\n    \"firstName\": \"Louis\",\r\n    \"lastName\": \"Dixon\",\r\n    \"phone\": \"321233534\",\r\n    \"email\": \"louis@example.com\",\r\n    \"active\": true\r\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/owner/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"owner",
+								"save"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Appointment",
+			"item": [
+				{
+					"name": "appointment save",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDYyMjk4MCwiZXhwIjoxNzAwNjI0NDIwfQ.L7bNPmI5mLJpdY4ZR5X8m4kLXrYHJFPj5--WBPQa4QE",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"userId\": 1,\r\n  \"clientId\": 1152197943,\r\n  \"propertyId\": 1,\r\n  \"startTime\": \"10:00:00\",\r\n  \"date\": \"2022-10-25\"\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/appointment/save",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"appointment",
+								"save"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "appointment update",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"propertyId\": 1,\r\n  \"startTime\": \"12:00:00\",\r\n  \"date\": \"2022-10-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/cesde/arkham/api/appointment/update",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"cesde",
+								"arkham",
+								"api",
+								"appointment",
+								"update"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "appointment get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090/api/appointment/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"appointment",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lfkanselmo@gmail.com\",\r\n    \"password\": \"123456\",\r\n    \"firstName\": \"Anselmo\",\r\n    \"lastName\": \"Ortega\",\r\n    \"phone\": \"3148510218\",\r\n    \"role\": \"ADMINISTRADOR\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"lfkanselmo@gmail.com\",\r\n    \"password\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8090/api/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"api",
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJsZmthbnNlbG1vQGdtYWlsLmNvbSIsImlhdCI6MTcwMDY3MjQ3MywiZXhwIjoxNzAwNjczOTEzfQ.CDv5PVjPtqQCV0Gfo-1Gka-EwKqLX92rc0kDnbBAhB8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "localhost:8090//api/auth/logout",
+							"host": [
+								"localhost"
+							],
+							"port": "8090",
+							"path": [
+								"",
+								"api",
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
